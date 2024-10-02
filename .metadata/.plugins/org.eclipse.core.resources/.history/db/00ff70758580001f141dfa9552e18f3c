@@ -1,0 +1,6 @@
+package com.service.spring.test;
+
+// main 안씀
+public class MyBatisJUnitTest02 {
+
+}

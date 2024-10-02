@@ -1,0 +1,22 @@
+package com.services.spring.test;
+
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class MyBatisJUnitTest {
+
+	@Test
+	public void unit() throws Exception{
+		Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		
+		SqlSession session = factory.openSession();
+		
+		
+		
+	}
+}
