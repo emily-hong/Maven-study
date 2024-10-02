@@ -16,6 +16,7 @@ public class MyProductController {
 	private MyProductCatalog myProductCatalog;
 	
 	
+	
 	@RequestMapping("result.do")
 	public ModelAndView myProductList() throws Exception{
 		List<MyProduct> list = myProductCatalog.findProducts();
