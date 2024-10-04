@@ -14,12 +14,30 @@ import com.service.spring.service.MyProductCatalog;
 public class MyProductController {
 	@Autowired
 	private MyProductCatalog myProductCatalog;
-	
-	
-	
-	@RequestMapping("result.do")
-	public ModelAndView myProductList() throws Exception{
-		List<MyProduct> list = myProductCatalog.findProducts();
-		return new ModelAndView("result", "list", list);
+
+	// TODO 확인 테스트 
+	@RequestMapping("addProduct.do")
+    public ModelAndView addProduct(MyProduct myProduct) throws Exception {
+        myProductCatalog.addProduct(myProduct); // 등록
+        
+        List<MyProduct> productList = myProductCatalog.findProducts();
+        
+        return new ModelAndView("result", "productList", productList);
+    }
+
+	// 상품검색
+	@RequestMapping("searchProduct.do")
+	public ModelAndView searchProduct(String searchOption, String keyword) throws Exception{
+		List<MyProduct> productList = null;
+		
+		if("name".equals(searchOption)) {
+			productList = myProductCatalog.findProductByName(keyword);
+		}else if("maker".equals(searchOption)) {
+			productList = myProductCatalog.findProductByMaker(keyword);
+		}else if("all".equals(searchOption)) {
+			productList = myProductCatalog.findProducts();
+		}
+		
+		return new ModelAndView("result", "productList", productList);
 	}
 }

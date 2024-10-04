@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
+		<table border="1">
 		<thead>
 			<tr>
 				<th>상품명</th>
@@ -17,15 +17,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-			<c:forEach items="${list}" var="myProduct">
-					<td>
-						<p>${list.name}</p>
-					</td>
-				</c:forEach>
-			</tr>
+			<c:forEach items="${productList}" var="product">
+				<tr>
+					<td>${product.name}</td>
+					<td>${product.maker}</td>
+					<td>${product.price}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
-	
 	</table>
 </body>
 </html>
