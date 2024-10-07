@@ -16,8 +16,8 @@ public class BoardDAO {
 	
 	public static final String NS = "ns.sql.Board.";
 	
-	public void write(Board vo) {
-		sqlSession.insert(NS+"write", vo);
+	public int write(Board vo) {
+		return sqlSession.insert(NS+"write", vo);
 	}
 	
 	public String selectByNoForDate(int no) {
