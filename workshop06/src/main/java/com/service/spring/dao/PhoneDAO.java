@@ -1,6 +1,7 @@
 package com.service.spring.dao;
 
 import java.util.List;
+import java.util.Arrays;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,8 @@ public class PhoneDAO {
 	}
 	// delete
 	public int delete(String[] list) {
-		return sqlSession.delete(NS+"delete", list);
+		List<String> numList = Arrays.asList(list); // 배열을 리스트로 변환
+		return sqlSession.delete(NS+"delete", numList);
 	}
 	// update
 	public int update(Phone vo) {

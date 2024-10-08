@@ -46,8 +46,6 @@ public class DIUnitTest {
 	public void delete() throws Exception{
 		String[] list = {"A50SZ", "A50SW"};
 		
-		System.out.println("list + " + list );
-		
 		int result = service.delete(list);
 		System.out.println("delete : " + result);
 	}
