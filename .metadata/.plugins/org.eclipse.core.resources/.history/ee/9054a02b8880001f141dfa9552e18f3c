@@ -1,9 +1,0 @@
-package com.service.spring.dao;
-
-import org.springframework.stereotype.Repository;
-
-// pojo
-@Repository
-public class ItemDAO {
-
-}

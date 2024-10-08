@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="MyBatisJUnitTest02.unit2" project="maven03_Fruits" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testcase name="unit2" classname="com.service.spring.test.MyBatisJUnitTest02" time="0.836"/>
-</testrun>

@@ -11,7 +11,7 @@ import com.service.spring.domain.Member;
 import com.service.spring.service.BoardService;
 
 public class DIUnitTest {
-	// myBatis와 DI연동 부분의 단위테스트.. 빈 설정문서를 읽어야 한다.
+	// myBatis와 DI연동 부분의 단위테스트.. bean 설정문서를 읽어야 한다.
 	ApplicationContext factory = 
 			new ClassPathXmlApplicationContext("/beans/application.xml");
 	
