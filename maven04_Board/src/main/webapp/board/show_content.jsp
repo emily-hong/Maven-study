@@ -48,10 +48,11 @@
 						<a href="list.do">
 						<img alt="전체글목록" src="${pageContext.request.contextPath}/img/list_btn.jpg" border="0">
 						</a>						
-					
+						
+						<!-- 글쓴 사람의 아이디가 로그인 사람의 아이디가 같다면, 자기가 쓴 글을 자기가 보고있다면 -->
 						<c:if test="${bvo.member.id == mvo.id }">
 							<img alt="삭제" src="${pageContext.request.contextPath}/img/delete_btn.jpg" border="0" onclick="deleteBoard()">
-							<img alt="삭제" src="${pageContext.request.contextPath}/img/modify_btn.jpg" border="0" onclick="updateBoard()">
+							<img alt="수정" src="${pageContext.request.contextPath}/img/modify_btn.jpg" border="0" onclick="updateBoard()">
 						</c:if>
 						</td>
 					</tr>

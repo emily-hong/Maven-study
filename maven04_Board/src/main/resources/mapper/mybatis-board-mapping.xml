@@ -4,14 +4,18 @@
 
 <mapper namespace="ns.sql.Board">
 	<!-- 게시글 등록..no는 자동완성..bard..id(member의 컬럼) -->
-	<!-- useGeneratedKeys 자동으로 증가 -->
+	<!-- useGeneratedKeys 자동으로 증가. 
+		  게시글 입력할때 디비에서 자동으로 값을 증가시켜라. keyProperty="no" 증가된 값이 no
+		 board.setNo().. 여기서 자동 증가된 no가 board에 주입
+		 결과적으로 pvo와 디비의 rvo 동기화가 진행됨 (pk가 자동증가 되는 경우 이 방식으로 함)
+	-->
 	<insert id="write" parameterType="board" useGeneratedKeys="true" keyProperty="no">
 		INSERT
 		INTO springboard (title, content, w_date, id)
 		VALUES (#{title}, #{content}, curdate(), #{member.id})
 	</insert>
 
-	<!--   특정 게시글이 입력된 날짜를 디비에서 받아오는 쿼리문..-->
+	<!-- 특정 게시글이 입력된 날짜를 디비에서 받아오는 쿼리문.. -->
 	<select id="selectByNoForDate" parameterType="int" resultType="string">
 		SELECT
 		w_date

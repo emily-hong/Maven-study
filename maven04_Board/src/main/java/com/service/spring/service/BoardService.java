@@ -13,18 +13,14 @@ public class BoardService {
 	@Autowired
 	private BoardDAO boardDAO ;
 	
-	// int 
-//	public void write(Board vo) {
-//		boardDAO.write(vo);
-//	}
 	public int write(Board vo) {
-		int row=boardDAO.write(vo);
-		System.out.println("Before vo :: "+vo);
+		System.out.println("Before vo :: "+vo); //no가 없음
+		int row=boardDAO.write(vo); // 디비에 no 자동증가 될 것이다.
 		
 		String date=boardDAO.selectByNoForDate(vo.getNo());
-		vo.setWriteDate(date);
+		vo.setWriteDate(date); //게시날짜
 		
-		System.out.println("After vo :: "+vo);
+		System.out.println("After vo :: "+vo); //no 있음
 		return row;
 	}
 	// 게시물 목록
